@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- '0.10'
+script:
+- npm run lint
+- npm test
+after_success:
+- npm run coveralls
+env:
+  global:
+    secure: DZhBiqhGiAtn0Ho2dx6gpmgAHjxrKXwy85Ivzr+8we79gGaqyo2vVUdDUAUm+3c0UxDkWLrUOQHcoAxM87CWIDGB7LhNDg7MEz0ZeUVPnkT19Qp6yCG7iK0+I/UE8Igsi5iCE55Nl1c5xv6kth/HI1QsOuB3u3S91t1H5ktZYAU=
