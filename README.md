@@ -1,5 +1,5 @@
-# node-tsheets-client
-Client to the TSheets REST API, for time reporting etc.
+# tsheets-client
+Simple client to the [TSheets REST API](http://developers.tsheets.com/docs/api/), for time reporting etc.
 
 ## Authentication
 Set the environment variable `NODE_TSHEETS_API_CLIENT_TOKEN` to a TSheets access token.
