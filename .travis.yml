@@ -17,4 +17,3 @@ deploy:
   on:
     tags: true
     repo: Springworks/node-tsheets-client
-    branch: master
