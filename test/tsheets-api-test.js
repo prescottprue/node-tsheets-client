@@ -14,7 +14,7 @@ describe(__filename, function() {
         var params;
 
         beforeEach(function() {
-          params = internals.createReportTimeParams();
+          params = internals.getCurrentUserParams();
         });
 
         it('should return a response object', function(done) {
@@ -31,7 +31,7 @@ describe(__filename, function() {
         var params;
 
         beforeEach(function() {
-          params = internals.createReportTimeParams();
+          params = internals.getCurrentUserParams();
           params.api_token = 'foo';
         });
 
@@ -72,7 +72,7 @@ describe(__filename, function() {
       var params;
 
       beforeEach(function() {
-        params = internals.createReportTimeParams();
+        params = internals.getCurrentUserParams();
         params.body_params = {
           foo: 'bar'
         };
@@ -100,7 +100,7 @@ describe(__filename, function() {
 });
 
 
-internals.createReportTimeParams = function() {
+internals.getCurrentUserParams = function() {
   return {
     endpoint: '/current_user',
     method: 'get',
@@ -111,7 +111,7 @@ internals.createReportTimeParams = function() {
 
 
 internals.assertMissingParamFailsValidation = function(param_name) {
-  var params = internals.createReportTimeParams();
+  var params = internals.getCurrentUserParams();
   delete params[param_name];
 
   (function() {

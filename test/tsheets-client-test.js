@@ -13,6 +13,11 @@ describe(__filename, function() {
       tsheets_client.reportTime.should.be.a('function');
     });
 
+    it('should define getTimesheets()', function() {
+      tsheets_client.should.have.property('getTimesheets');
+      tsheets_client.getTimesheets.should.be.a('function');
+    });
+
   });
 
 });
