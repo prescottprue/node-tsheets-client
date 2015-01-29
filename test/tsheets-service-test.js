@@ -143,6 +143,27 @@ describe(__filename, function() {
             'api_token',
             'user_ids',
             'start_date',
+            'end_date',
+            'page'
+          ]);
+        });
+
+      });
+
+      describe('without page param', function() {
+        var params;
+
+        before(function() {
+          params = internals.createGetTimesheetsParams();
+          delete params.page;
+        });
+
+        it('should return validated object', function() {
+          var validated = service.internals.validateGetTimesheetsParams(params);
+          validated.should.have.keys([
+            'api_token',
+            'user_ids',
+            'start_date',
             'end_date'
           ]);
         });
@@ -187,6 +208,7 @@ describe(__filename, function() {
             endpoint: '/timesheets',
             qs: {
               user_ids: params.user_ids,
+              page: params.page,
               start_date: params.start_date,
               end_date: params.end_date
             }
@@ -210,6 +232,7 @@ describe(__filename, function() {
             endpoint: '/timesheets',
             qs: {
               start_date: params.start_date,
+              page: params.page,
               end_date: params.end_date
             }
           });
@@ -228,7 +251,8 @@ internals.createGetTimesheetsParams = function() {
     api_token: internals.VALID_API_TOKEN,
     user_ids: [internals.TEST_USER_ID],
     start_date: '2015-01-19',
-    end_date: '2015-01-25'
+    end_date: '2015-01-25',
+    page: 1
   };
 };
 

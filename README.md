@@ -34,3 +34,4 @@ Gets timesheets for the specified user(s) for the provided time period.
 | start_date | `YYYY-MM-DD` for the starting date.              | string   | Yes      |
 | end_date   | `YYYY-MM-DD` for the end date.                   | string   | Yes      |
 | user_ids   | Array of TSheets user IDs to get timesheets for. | number[] | No       |
+| page       | Page number for timesheets (max 50 per page).    | number   | No       |
