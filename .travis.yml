@@ -19,3 +19,7 @@ deploy:
     tags: true
     repo: Springworks/node-tsheets-client
     all_branches: true
+notifications:
+  email: false
+  slack:
+    secure: C/MktH2RJozWBXNX9SOAxj21Bqy7bz+BNQgq4xY0y42Xo7ZgBzkGNepbTDaYZyS/ZtUqvLiqMePuzUXLtfxGdJQGS8eMdOdpxEC2tj50EEISx4qU/uJLaBu1Svyj2ygC9+FBP2ohqrw7WMTx4iy9rQu4alSdt/FCYUHhtOgZku4=
