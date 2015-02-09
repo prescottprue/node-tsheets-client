@@ -1,6 +1,6 @@
 {
   "name": "tsheets-client",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Client to the TSheets REST API, for time reporting etc.",
   "main": "tsheets-client.js",
   "directories": {
