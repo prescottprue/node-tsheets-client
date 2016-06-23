@@ -35,3 +35,8 @@ Gets timesheets for the specified user(s) for the provided time period.
 | end_date   | `YYYY-MM-DD` for the end date.                   | string   | Yes      |
 | user_ids   | Array of TSheets user IDs to get timesheets for. | number[] | No       |
 | page       | Page number for timesheets (max 50 per page).    | number   | No       |
+
+## Contribution
+
+1. Install dependencies: `npm install`
+2.
