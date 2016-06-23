@@ -21,7 +21,6 @@ Reports time for a user, using the provided job code.
 | date             | `YYYY-MM-DD` for the date to report time for. | string | Yes      |
 
 
-
 ### `getTimesheets(params, callback)`
 
 Gets timesheets for the specified user(s) for the provided time period.
@@ -38,5 +37,8 @@ Gets timesheets for the specified user(s) for the provided time period.
 
 ## Contribution
 
+**Note:** Make sure you set the environment variable `NODE_TSHEETS_API_CLIENT_TOKEN`  as described above or tests will not run.
+
 1. Install dependencies: `npm install`
-2.
+2. Run tests using: `npm run test`
+3. Check/Remove lint using: `npm run lint:fix`
