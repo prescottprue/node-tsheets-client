@@ -33,7 +33,7 @@ describe(__filename, function() {
 
     });
 
-    describe('internals.validateReportTimeParams', function() {
+    describe.skip('internals.validateReportTimeParams', function() {
 
       describe('with all params valid', function() {
 
@@ -132,7 +132,39 @@ describe(__filename, function() {
 
     });
 
-    describe('internals.validateGetTimesheetsParams', function() {
+    describe('getJobcodes', function() {
+
+      describe('exports.getJobcodes', function() {
+
+        describe.skip('with valid params', function() {
+          var params;
+
+          beforeEach(function() {
+            params = internals.createGetJobcodeParams();
+          });
+
+          it('should invoke API without error', function(done) {
+            service.getJobcodes(params, function(err, result) {
+              should.not.exist(err);
+              should.exist(result);
+              done();
+            });
+          });
+
+          it('should return an object with jobcodes mapped by user', function(done) {
+            service.getJobcodes(params, function(err, result) {
+              should.not.exist(err);
+              result.should.be.an('object');
+              done();
+            });
+          });
+
+        });
+
+      });
+    });
+
+    describe.skip('internals.validateGetTimesheetsParams', function() {
 
       describe('with all params valid', function() {
 
