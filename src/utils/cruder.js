@@ -29,7 +29,8 @@ export const makeRequest = (params) => {
       if (res.statusCode >= 300) {
         return reject(new Error('Invalid response, statusCode=' + res.statusCode))
       }
-      resolve(json)
+      console.log('request response:', res, json)
+      resolve(json.results || json)
     })
   })
 }

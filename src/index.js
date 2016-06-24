@@ -21,8 +21,8 @@ export default class TSheets {
   }
 
   // Original API
-  reportTime () {
-
+  reportTime (reportData) {
+    return cruder('/timesheets', reportData)
   }
   getTimesheets () {
     return get('/timesheets')()
@@ -31,5 +31,6 @@ export default class TSheets {
     return get('/timesheets')()
   }
 }
+export const timesheets = Object.assign({}, cruder('/timesheets', ['get', 'add', 'update', 'remove']))
 
 export { utils, TSheets }

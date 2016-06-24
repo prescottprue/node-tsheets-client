@@ -10,12 +10,12 @@
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
     "clean": "rimraf lib coverage",
-    "test": "NODE_ENV=test mocha -R spec --compilers js:babel-core/register ./test/setup.js ./test/**/*.spec.js",
+    "test": "NODE_ENV=test mocha -R spec --compilers js:babel-core/register ./test/setup.js ./test/**/*.spec.js",
     "test:cov": "NODE_ENV=test babel-node $(npm bin)/isparta cover --report lcov ./node_modules/mocha/bin/_mocha -- ./test --recursive",
     "test:old": "NODE_ENV=test istanbul cover --report teamcity --report lcov _mocha -- --ui bdd --check-leaks --recursive --slow 500 --timeout 5000 --reporter spec --globals 'Intl,IntlPolyfill' test",
     "build:lib": "babel src --out-dir lib",
     "build": "npm run clean && npm run build:lib",
-    "watch": "npm run build:lib -- --stats --progress --colors --watch",
+    "watch": "npm run build:lib -- --watch",
     "prepublish": "npm run clean && npm run test && npm run build"
   },
   "repository": {
@@ -37,6 +37,7 @@
     "babel-cli": "^6.6.5",
     "babel-core": "^6.7.2",
     "babel-loader": "^6.2.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-es2015": "^6.5.0",
     "chai": "^3.5.0",
     "eslint": "^2.13.1",
