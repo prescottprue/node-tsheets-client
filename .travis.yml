@@ -1,6 +1,8 @@
 language: node_js
 node_js:
 - '4'
+- '5'
+- '6'
 script:
 - npm run lint
 - npm test
@@ -12,14 +14,13 @@ env:
     secure: DZhBiqhGiAtn0Ho2dx6gpmgAHjxrKXwy85Ivzr+8we79gGaqyo2vVUdDUAUm+3c0UxDkWLrUOQHcoAxM87CWIDGB7LhNDg7MEz0ZeUVPnkT19Qp6yCG7iK0+I/UE8Igsi5iCE55Nl1c5xv6kth/HI1QsOuB3u3S91t1H5ktZYAU=
 deploy:
   provider: npm
-  email: kristofer@sommestad.com
+  email: $NPM_EMAIL
   api_key:
-    secure: GBHAKhFa92scTx+Y1Ju5avlrGOHOeOmoBLe1tMO7VMR6GWb+YpCt7ijM15vD2/4slBms3b9WZ7sRk76MOErrZkVr7fv5kunomVaSf1QKJw1/hkr2YOx7r0x2WIeMD/TjjypvuQcVvs8aHbM1gC76pothpPxawZsAM3M9Ys3YBnk=
-  on:
+    secure: $NPM_KEY
     tags: true
     repo: Springworks/node-tsheets-client
     all_branches: true
 notifications:
   email: false
   slack:
-    secure: C/MktH2RJozWBXNX9SOAxj21Bqy7bz+BNQgq4xY0y42Xo7ZgBzkGNepbTDaYZyS/ZtUqvLiqMePuzUXLtfxGdJQGS8eMdOdpxEC2tj50EEISx4qU/uJLaBu1Svyj2ygC9+FBP2ohqrw7WMTx4iy9rQu4alSdt/FCYUHhtOgZku4=
+    secure: $SLACK_KEY
