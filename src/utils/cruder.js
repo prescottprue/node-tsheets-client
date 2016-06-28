@@ -22,12 +22,13 @@ export const makeRequest = (params) => {
 
   if (body && Object.keys(body).length) opts.json = { data: body }
   if (qs) opts.qs = qs
-
+  console.log('request:', opts)
   return new Promise((resolve, reject) => {
     request(opts, (err, res, json) => {
+      console.log('error:', err)
       if (err) return reject(err)
       if (res.statusCode >= 300) {
-        return reject(new Error('Invalid response, statusCode=' + res.statusCode))
+        return reject(new Error(res.message || 'Invalid response, statusCode=' + res.statusCode))
       }
       console.log('request response:', res, json)
       resolve(json.results || json)

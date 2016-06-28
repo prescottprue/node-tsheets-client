@@ -1,36 +1,20 @@
 import * as utils from './utils'
-import cruder, { get } from './utils/cruder'
+import groups from './groups'
+import jobcodes from './jobcodes'
+import timesheets from './timesheets'
+import users from './users'
+
+// Original API
+export const reportTime = (reportData) => timesheets().add(reportData)
+export const getTimesheets = () => timesheets().get()
+export const getJobcodes = () => jobcodes().get()
 
 export default class TSheets {
-  /** Constructor
-   */
+
   constructor () {
-    this.utils = utils
-  }
-  timesheets () {
-    return cruder('/timesheets', ['get', 'add', 'update', 'remove'])
-  }
-  jobcodes () {
-    return cruder('/jobcodes', ['get', 'add', 'update', 'remove'])
-  }
-  groups () {
-    return cruder('/groups', ['get', 'add', 'update', 'remove'])
-  }
-  users () {
-    return cruder('/groups', ['get', 'add', 'update', 'remove'])
+    Object.assign(this, { utils, timesheets, jobcodes, groups, users })
   }
 
-  // Original API
-  reportTime (reportData) {
-    return cruder('/timesheets', reportData)
-  }
-  getTimesheets () {
-    return get('/timesheets')()
-  }
-  getJobcodes () {
-    return get('/timesheets')()
-  }
 }
-export const timesheets = Object.assign({}, cruder('/timesheets', ['get', 'add', 'update', 'remove']))
 
-export { utils, TSheets }
+export { utils, timesheets, jobcodes, groups, users }
