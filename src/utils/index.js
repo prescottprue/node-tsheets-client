@@ -23,6 +23,11 @@ export const typeReducer = (endpoint, types, methods, name) =>
       return Object.assign({}, returnedMethods, method)
     }, {})
 
+
+export const populate = (main, supplemental) => {
+  let final = {}
+  Object.keys(main).forEach((item) =>  )
+}
 export default Object.assign(
   {},
   { today, typeReducer }

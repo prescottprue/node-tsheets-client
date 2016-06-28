@@ -6,6 +6,10 @@
   "directories": {
     "test": "test"
   },
+  "files": [
+    "src",
+    "lib"
+  ],
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
@@ -16,7 +20,7 @@
     "build:lib": "babel src --out-dir lib",
     "build": "npm run clean && npm run build:lib",
     "watch": "npm run build:lib -- --watch",
-    "prepublish": "npm run clean && npm run test && npm run build"
+    "prepublish": "npm run clean && npm run lint:fix && npm run test && npm run build"
   },
   "repository": {
     "type": "git",
